@@ -11,13 +11,18 @@ const MemberForm = () => {
       </FormGroup>
 
       <FormGroup>
+        <Label htmlFor="age">Age </Label>
+        <Input id="age" type="number" name="age" placeholder="Type your age" />
+      </FormGroup>
+
+      <FormGroup>
         <Label htmlFor="email">Email </Label>
         <Input id="email" type="email" name="email" placeholder="member@gmail.com" />
       </FormGroup>
 
       <FormGroup>
         <Label htmlFor="role">Role </Label>
-        <Input type="select" id="role" name="role" multiple>
+        <Input id="role" type="select" name="role" >
           <option value='1'>Backend engineer</option>
           <option value='2'>Frontend engineer</option>
           <option value="3">Full Stack engineer</option>

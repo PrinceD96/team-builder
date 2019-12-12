@@ -13,23 +13,23 @@ function App() {
 
   const Member = ({ teamMember }) => {
     return (
-      <div>
-        <Card>
-          <CardHeader>{teamMember.name}</CardHeader>
-          <CardBody>
-            <CardText>Age: {teamMember.age}</CardText>
-            <CardText>Email: {teamMember.email}</CardText>
-            <CardText>Role: {teamMember.role}</CardText>
-          </CardBody>
-        </Card>
-      </div>
+
+      <Card className="member-card">
+        <CardHeader className="header">{teamMember.name}</CardHeader>
+        <CardBody>
+          <CardText><span className="member-inputs">Age:</span> {teamMember.age}</CardText>
+          <CardText><span className="member-inputs">Email:</span> {teamMember.email}</CardText>
+          <CardText><span className="member-inputs">Role:</span> {teamMember.role}</CardText>
+        </CardBody>
+      </Card>
+
     )
   }
 
   return (
     <div className="App">
       <h1>Team Members</h1>
-      <Member teamMember={teamMember} />
+      <div className="member-list"><Member teamMember={teamMember} /></div>
       <h1>Join our Team</h1>
       <MemberForm />
     </div>

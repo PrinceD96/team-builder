@@ -1,20 +1,38 @@
 .App {
   text-align: center;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.memberCard{
-  border: 2px solid black;
-  width: 100%;
-  max-width: 250px;
-  text-align: left;
+  background: lightsteelblue;
+  height: 100vh;
+  padding: 40px;
 }
 
 form {
+  margin: 20px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+}
+
+label{
+  text-align: left;
+  width: 200px;
+  font-weight: bold;
+}
+
+.member-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.member-card{
+  text-align: left;
+}
+
+.member-card .header{
+  text-align: center;
+  font-weight: bold;
+}
+
+.member-inputs{
+  font-weight: bold;
 }
