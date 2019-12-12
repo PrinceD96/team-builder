@@ -8,7 +8,7 @@
 form {
   padding: 10px;
   width: 500px;
-  background: lightcoral;
+  background: lightskyblue;
   /* border: 1px solid lightgray; */
   margin: 20px auto;
   display: flex;
@@ -37,10 +37,16 @@ label{
 }
 
 .member-card .header{
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
   font-weight: bold;
 }
 
 .member-inputs{
   font-weight: bold;
+}
+
+.faIcon{
+  cursor: pointer;
 }

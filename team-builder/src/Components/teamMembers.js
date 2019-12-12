@@ -1,15 +1,22 @@
 import React from 'react';
-import { Row, Col, Card, CardBody, CardHeader, CardText } from 'reactstrap';
+import { Card, CardBody, CardHeader, CardText, CardTitle } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
-const Members = ({ teamMembers }) => {
-  console.log("TeamMembers", teamMembers);
+
+const Members = ({ teamMembers, deleteTeamMember }) => {
+  // console.log("TeamMembers", teamMembers);
   return (
     <div className="teamMember-list">
       {
         teamMembers.map(teamMember => (
 
           <Card className="member-card" key={teamMember.id}>
-            <CardHeader className="header">{teamMember.name}</CardHeader>
+            <CardHeader className="header">
+              <CardTitle>{teamMember.name}</CardTitle>
+              <FontAwesomeIcon className="faIcon" icon={faEdit} />
+              <FontAwesomeIcon className="faIcon" onClick={() => deleteTeamMember(teamMember.id)} icon={faTrashAlt} />
+            </CardHeader>
             <CardBody>
               <CardText><span className="member-inputs">Age:</span> {teamMember.age}</CardText>
               <CardText><span className="member-inputs">Email:</span> {teamMember.email}</CardText>

@@ -26,10 +26,14 @@ function App() {
     setTeamMembers([...teamMembers, newTeamMember])
   }
 
+  const deleteTeamMember = (id) => {
+    setTeamMembers(teamMembers.filter(member => member.id !== id));
+  }
+
   return (
     <div className="App">
       <h1>Team Members</h1>
-      <Members teamMembers={teamMembers} />
+      <Members teamMembers={teamMembers} deleteTeamMember={deleteTeamMember} />
       <h2>Join our Team</h2>
       <MemberForm addNewTeamMember={addNewTeamMember} />
     </div>
