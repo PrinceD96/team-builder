@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import './App.css';
-import Form from './Components/Form';
+import MemberForm from './Components/MemberForm';
+import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
 
 function App() {
-  const [teamMember, setTeamMember] = useState({ id: 1, name: "Daniel Morales", age: 23 })
+  const [teamMember, setTeamMember] = useState({
+    id: 1,
+    name: "Daniel Morales",
+    age: 23,
+    email: "danielmorales@gmail.com", role: "Full Stack engineer"
+  })
 
   const Member = ({ teamMember }) => {
     return (
       <div>
-        <p>{teamMember.name}</p>
-        <p>{teamMember.age}</p>
+        <Card>
+          <CardHeader>{teamMember.name}</CardHeader>
+          <CardBody>
+            <CardText>Age: {teamMember.age}</CardText>
+            <CardText>Email: {teamMember.email}</CardText>
+            <CardText>Role: {teamMember.role}</CardText>
+          </CardBody>
+        </Card>
       </div>
     )
   }
@@ -18,7 +30,8 @@ function App() {
     <div className="App">
       <h1>Team Members</h1>
       <Member teamMember={teamMember} />
-      <Form />
+      <h1>Join our Team</h1>
+      <MemberForm />
     </div>
   );
 }
