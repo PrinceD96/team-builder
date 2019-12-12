@@ -1,37 +1,37 @@
 import React, { useState } from 'react';
 import './App.css';
+import Members from './Components/teamMembers';
 import MemberForm from './Components/MemberForm';
-import { Card, CardBody, CardHeader, CardText } from 'reactstrap';
+
 
 function App() {
-  const [teamMember, setTeamMember] = useState({
+  const [teamMembers, setTeamMembers] = useState([{
     id: 1,
     name: "Daniel Morales",
     age: 23,
-    email: "danielmorales@gmail.com", role: "Full Stack engineer"
-  })
+    email: "danielmorales@gmail.com",
+    role: "Full Stack engineer"
+  }]);
 
-  const Member = ({ teamMember }) => {
-    return (
+  const addNewTeamMember = (teamMember) => {
+    console.log("addNewTeamMember", teamMember);
+    const newTeamMember = {
+      id: Date.now(),
+      name: teamMember.name,
+      age: teamMember.age,
+      email: teamMember.email,
+      role: teamMember.role
+    }
 
-      <Card className="member-card">
-        <CardHeader className="header">{teamMember.name}</CardHeader>
-        <CardBody>
-          <CardText><span className="member-inputs">Age:</span> {teamMember.age}</CardText>
-          <CardText><span className="member-inputs">Email:</span> {teamMember.email}</CardText>
-          <CardText><span className="member-inputs">Role:</span> {teamMember.role}</CardText>
-        </CardBody>
-      </Card>
-
-    )
+    setTeamMembers([...teamMembers, newTeamMember])
   }
 
   return (
     <div className="App">
       <h1>Team Members</h1>
-      <div className="member-list"><Member teamMember={teamMember} /></div>
-      <h1>Join our Team</h1>
-      <MemberForm />
+      <Members teamMembers={teamMembers} />
+      <h2>Join our Team</h2>
+      <MemberForm addNewTeamMember={addNewTeamMember} />
     </div>
   );
 }
