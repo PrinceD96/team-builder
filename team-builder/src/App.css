@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+  background: lightsteelblue;
+  height: 100vh;
+  padding: 40px;
+}
+
+form {
+  padding: 10px;
+  width: 350px;
+  background: lightskyblue;
+  /* border: 1px solid lightgray; */
+  margin: 20px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+}
+
+label{
+  text-align: left;
+  width: 200px;
+  font-weight: bold;
+}
+
+.teamMember-list{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 80px 20px;
+  justify-content: space-around;
+}
+
+.member-card{
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12), 0 5px 2px rgba(0, 0, 0, 0.24);
+}
+
+.member-card .header{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  font-weight: bold;
+}
+
+.member-inputs{
+  font-weight: bold;
+}
+
+.faIcon{
+  cursor: pointer;
+}
