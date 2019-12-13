@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 
-const Members = ({ teamMembers, deleteTeamMember }) => {
+const Members = ({ teamMembers, deleteTeamMember, editTeamMember }) => {
   // console.log("TeamMembers", teamMembers);
   return (
     <div className="teamMember-list">
@@ -14,7 +14,7 @@ const Members = ({ teamMembers, deleteTeamMember }) => {
           <Card className="member-card" key={teamMember.id}>
             <CardHeader className="header">
               <CardTitle>{teamMember.name}</CardTitle>
-              <FontAwesomeIcon className="faIcon" icon={faEdit} />
+              <FontAwesomeIcon className="faIcon" onClick={() => editTeamMember(teamMember)} icon={faEdit} />
               <FontAwesomeIcon className="faIcon" onClick={() => deleteTeamMember(teamMember.id)} icon={faTrashAlt} />
             </CardHeader>
             <CardBody>

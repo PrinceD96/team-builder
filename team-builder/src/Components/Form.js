@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-const MemberForm = ({ addNewTeamMember }) => {
-  const [teamMember, setTeamMember] = useState({ id: "", name: "", age: "", email: "", role: "" });
+const MemberForm = ({ addNewTeamMember, memberToEdit }) => {
+  const [teamMember, setTeamMember] = useState({ id: "s", name: "", age: "", email: "", role: "" });
+  console.log("memberToEdit", memberToEdit);
+
+  useEffect(() => {
+    console.log('editing');
+    if (memberToEdit) {
+      setTeamMember({ id: "", name: memberToEdit.name, age: memberToEdit.age, email: memberToEdit.email, role: memberToEdit.role });
+    }
+  }, [memberToEdit]);
 
   const handleChanges = (e) => {
     // console.log("event", e.target.value);
